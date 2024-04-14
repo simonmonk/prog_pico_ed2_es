@@ -14,4 +14,4 @@ while True:
         led.on()
         sleep(0.6)
         led.off()
-        sleep(0.6)aw       as
+        sleep(0.6)
