@@ -7,6 +7,6 @@ esperas = [0.2, 0.2, 0.2, 0.6, 0.6, 0.6]
 while True:
     for espera in esperas:
         led.on()
-        sleep(delay)
+        sleep(espera)
         led.off()
-        sleep(delay)
+        sleep(espera)
