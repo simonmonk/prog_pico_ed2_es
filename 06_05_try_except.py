@@ -4,4 +4,4 @@ try:
     print(f.read())
     f.close()
 except:
-    print('El fichero {} no existe'.format(nombre_fichero))
+    print(f'El fichero {nombre_fichero} no existe')
