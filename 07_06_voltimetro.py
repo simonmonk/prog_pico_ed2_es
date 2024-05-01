@@ -1,7 +1,7 @@
 from machine import ADC, Pin
 from utime import sleep
 
-analog = ADC(28)
+pin_analogico = ADC(28)
 
 def voltios_desde_lectura(lectura):
     min_lectura = 256
@@ -12,6 +12,6 @@ def voltios_desde_lectura(lectura):
     return voltios
 
 while True:
-    lectura = analog.read_u16()
+    lectura = pin_analogico.read_u16()
     print(lectura,voltios_desde_lectura(lectura))
     sleep(0.5)
