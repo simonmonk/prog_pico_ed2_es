@@ -11,8 +11,8 @@ max_pulso_us = 2500
 factor_angulo_pulso = 180/(max_pulso_us-min_pulso_us)
 def set_pulso(pulso_us):
     angulo = (pulso_us - min_pulso_us) * factor_angulo_pulso
-    print(f'{pulso_us} - {angulo:.1f}', end='\r')
-    # duty 0 a 1023. A 50Hz, cada punto_duty es
+    print(f'{pulso_us} - {angulo:.1f}',end='\r')
+    # duty 0 to 1023. A 50Hz, cada punto_duty es
     # 20000/65535 = 0.305 microsegundos/punto_duty
     duty = int(pulso_us / 0.305)
     servo.duty_u16(duty)
