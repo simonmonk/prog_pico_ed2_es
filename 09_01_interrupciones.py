@@ -1,7 +1,7 @@
 from machine import Pin
 from utime import sleep
 
-boton = Pin(14, Pin.IN, Pin.PULL_UP)
+boton = Pin(12, Pin.IN, Pin.PULL_UP)
 
 def gestiona_boton_down(ignore):
     print('BOTÓN PULSADO')
