@@ -16,7 +16,7 @@ def muestra_tiempo_sistema(timer):
     
     fecha_str = f'{dia:02d}/{mes:02d}/{año}'
     tiempo_str = f'{hora:02d}:{minuto:02d}:{segundo:02d}'
-    dia_str = f'{dia_semana[dia_semana]} {dia_año}/365'
+    dia_str = f'{dias_semana[dia_semana]} {dia_año}/365'
     print(tiempo_str, fecha_str,dia_str, end ='\r')
     oled.text(tiempo_str, 3 * CHAR_SIZE, 0, 1)
     oled.text(fecha_str, 2 * CHAR_SIZE, CHAR_SIZE, 1)

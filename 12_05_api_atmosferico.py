@@ -14,28 +14,37 @@ api_base = 'http://api.openweathermap.org/data/2.5/weather?'
 url = api_base + localizacion + '&appid=' + clave
 periodo_actualizacion = 60 # segundos
 
-
 i2c = I2C(0, sda=Pin(4, pull=Pin.PULL_UP), scl=Pin(5, pull=Pin.PULL_UP))
 oled = SSD1306_I2C(128, 32, i2c)
 
 def get_weather():
     if not mm_wlan.is_connected():
         mm_wlan.connect_to_network(ssid, password)
-    response = urequests.get(url)
-    if (response.status_code == 200):
-        data = json.loads(response.text)
+    respuesta = urequests.get(url)
+    if respuesta.status_code == 200:
+        data = json.loads(respuesta.text)
         description = data['weather'][0]['description']
-#     print(data)
+        # print(data) # imprimir en caso de error
         temp = data['main']['temp'] - 273.15
         return (temp, description)
     else:
-        return(0, 'unavailable')
+        if respuesta.status_code == 401:
+            print('No estás autorizado, revisa tu clave')
+            exit() # no lo intentamos más
+        elif respuesta.status_code == 404:
+            print(f'Página no encontrada, revisa tu url: {url}')
+            exit() # no lo intentamos más
+        elif respuesta.status_code == 500:
+            print('Serivdor no está listo')
+        else:
+            print(f'Error: {response.status_code}')
+        return(0, 'No disponible')
         
 def update_display():
-    temp, description = get_weather()
+    temp, descripcion = get_weather()
     oled.fill(0)
     temp_str = '{:.1f} deg C'.format(temp)
     oled.text(temp_str, 0, 0, 1)
-    oled.text(description, 0, 20, 1)
+    oled.text(descripcion, 0, 20, 1)
     oled.show()
 

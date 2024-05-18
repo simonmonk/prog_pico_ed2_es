@@ -7,7 +7,7 @@ min_pulso_us = 500
 max_pulso_us = 2500
 factor_angulo_pulso = 180/(max_pulso_us-min_pulso_us)
 
-pot = ADC(27)
+pot = ADC(28)
 
 def set_pulso(pulso_us):
     angulo = (pulso_us - min_pulso_us) * factor_angulo_pulso
