@@ -4,8 +4,8 @@ import mm_wlan
 from machine import Pin
 led = Pin('LED', Pin.OUT)
 
-ssid = 'Digifibra_4BB8_EXT'
-password = 'qazxcvbgtrewsdf26'
+ssid = 'network'
+password = 'password'
 
 app = Microdot()  
 mm_wlan.connect_to_network(ssid, password,verbose=False)

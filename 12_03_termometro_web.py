@@ -2,8 +2,8 @@ from microdot import Microdot
 from machine import ADC
 import mm_wlan
 
-ssid = 'Digifibra_4BB8_EXT'
-password = 'qazxcvbgtrewsdf26'
+ssid = 'network'
+password = 'password'
 
 temp_sensor = ADC(4)
 puntos_por_voltio = 3.3 / 65535
