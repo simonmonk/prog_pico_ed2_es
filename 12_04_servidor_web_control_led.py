@@ -14,9 +14,9 @@ print(f'Conéctate a http://{mm_wlan.get_ip()}')
 
 def estado_led():
     if led.value():
-        return '<img src="https://img.icons8.com/?size=80&id=e9V-XJYOmiTY&format=png"/> <br/> Led encendido <a href="/off">Apagar</a>'
+        return '<img src="https://raw.githubusercontent.com/simonmonk/prog_pico_ed2_es/main/imagenes/light_on.png"/> <br/> Led encendido <a href="/off">Apagar</a>'
     else:
-        return '<img src="https://img.icons8.com/?size=80&id=30144&format=png"/> <br/> Led apagado  <a href="/on">Encender</a>'
+        return '<img src="https://raw.githubusercontent.com/simonmonk/prog_pico_ed2_es/main/imagenes/light_off.png"/> <br/> Led apagado  <a href="/on">Encender</a>'
 
 index_html = '''
 <!DOCTYPE html>
