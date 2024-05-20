@@ -35,7 +35,7 @@ def get_weather():
             print(f'Página no encontrada, revisa tu url: {url}')
             exit() # no lo intentamos más
         elif respuesta.status_code == 500:
-            print('Serivdor no está listo')
+            print('El servidor no está listo')
         else:
             print(f'Error: {response.status_code}')
         return(0, 'No disponible')
@@ -48,3 +48,6 @@ def update_display():
     oled.text(descripcion, 0, 20, 1)
     oled.show()
 
+while True:
+    update_display()
+    sleep(periodo_actualizacion)
