@@ -32,7 +32,7 @@ _UART_SERVICE = (
 
 
 class BLESimplePeripheral:
-    def __init__(self, ble, name="Pico-blue"):
+    def __init__(self, ble, name="mpy-uart"):
         self._ble = ble
         self._ble.active(True)
         self._ble.irq(self._irq)
