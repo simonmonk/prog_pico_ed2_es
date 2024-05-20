@@ -24,7 +24,7 @@ index_html = '''
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Led Control</title>
+        <title>Termómetro y calendario web</title>
         <meta http-equiv="refresh" content="5" >
     </head>
 <body>

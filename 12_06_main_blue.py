@@ -1,4 +1,3 @@
-# Import necessary modules
 from machine import Pin , ADC
 import bluetooth
 from led_periferico_ble import BLESimplePeripheral
