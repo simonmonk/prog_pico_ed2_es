@@ -5,8 +5,8 @@ import json
 from utime import sleep
 from ssd1306 import SSD1306_I2C
 
-ssid = 'network'
-password = 'password'
+ssid = 'mi_wifi'
+password = 'mi_password'
 
 clave = 'ea751fc7712f2705=e8a448213b712'
 localizacion = 'lat=53.925854&lon=-3.021994'

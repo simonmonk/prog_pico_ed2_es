@@ -4,8 +4,8 @@ import mm_wlan
 from machine import Pin
 led = Pin('LED', Pin.OUT)
 
-ssid = 'network'
-password = 'password'
+ssid = 'mi_wifi'
+password = 'mi_password'
 
 app = Microdot()  
 mm_wlan.connect_to_network(ssid, password,verbose=False)
