@@ -2,6 +2,7 @@ from machine import Pin, I2C
 import mm_wlan
 import urequests
 import json
+import sys
 from utime import sleep
 from ssd1306 import SSD1306_I2C
 
@@ -30,10 +31,10 @@ def get_weather():
     else:
         if respuesta.status_code == 401:
             print('No estás autorizado, revisa tu clave')
-            exit() # no lo intentamos más
+            sys.exit() # no lo intentamos más
         elif respuesta.status_code == 404:
             print(f'Página no encontrada, revisa tu url: {url}')
-            exit() # no lo intentamos más
+            sys.exit() # no lo intentamos más
         elif respuesta.status_code == 500:
             print('El servidor no está listo')
         else:

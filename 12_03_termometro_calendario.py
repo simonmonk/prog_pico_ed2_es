@@ -17,7 +17,8 @@ puntos_por_voltio = 3.3 / 65535
 def lee_temp_c():
     lectura = temp_sensor.read_u16() * puntos_por_voltio
     temp_c = 27 - (lectura - 0.706)/0.001721
-    return temp_c
+    # formateamos la temperatura con 1 decimal
+    return f'{temp_c:3.1f}'
 
 index_html = '''
 <!DOCTYPE html>
@@ -39,7 +40,7 @@ import time
 dias_semana = ('lunes', 'martes', 'miércoles.', 'jueves','viernes', 'sábado', 'domingo')
 
 def get_hora():
-  año,mes,dia,hora,minuto,segundo,dia_semana,dia_año = time.localtime()
+    año,mes,dia,hora,minuto,segundo,dia_semana,dia_año = time.localtime()
     
     fecha_str = f'{dia:02d}/{mes:02d}/{año}'
     tiempo_str = f'{hora:02d}:{minuto:02d}:{segundo:02d}'
